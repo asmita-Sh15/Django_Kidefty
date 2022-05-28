@@ -32,3 +32,5 @@ To provide feedback click on "Feedback" button on home page.
 To view the data of new registered guardians and feedback by going in admin portal of kidefty.
 Username: admin
 Password: admin
+
+NOTE: In case the webcam is not detected try changing the parameter of cv2.vediocapture() function in the "output" function inside Django_Kidefty/Django/project/home/views.py from 0 to 1 or 2.
