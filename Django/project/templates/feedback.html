@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block title%} feedback {%endblock title%}
+
+{%block body %}
+<div class="container my-4 px-0">
+    <img src="https://media.istockphoto.com/photos/multiethnic-mixedrace-pupils-classmates-schoolchildren-students-in-picture-id1338736300?s=612x612" class="d-block w-100" alt="..." width="200" height="400">
+</div>
+<h2 style="text-align: center;"> PROVIDE FEEDBACK HERE </h2>
+<div class="container">
+    <form method="post" action="/give_feedback">
+    {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Parents Name</label>
+          <input type="text" class="form-control" id="parentname" name="parentname" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label for="name">Child's Name</label>
+            <input type="text" class="form-control" id="childname" name="childname" placeholder="Enter Your Child's Name">
+        </div>
+        <div class="form-group">
+            <label for="name">Guardian's Name(Who'll pick the child from spot)</label>
+            <input type="text" class="form-control" id="guardianname" name="guardianname" placeholder="Enter the Guardian's Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Contact Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Contact Number">
+        </div>
+        
+        <div class="form-group">
+          <label for="desc">Provide your feedback</label>
+          <textarea class="form-control" id="desc" name="desc" rows="20"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock body %}

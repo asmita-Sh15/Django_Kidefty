@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block title%} Register On {%endblock title%}
+
+{%block body %}
+<div class="container my-4 px-0">
+    <img src="https://media.istockphoto.com/photos/school-buses-picture-id512291589?s=612x612" class="d-block w-100" alt="..." width="200" height="400">
+</div>
+<h2 style="text-align: center;"> REGISTER HERE </h2>
+<div class="container">
+    <form method="post" action="/register_on">
+    {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Parents Name</label>
+          <input type="text" class="form-control" id="parentname" name="parentname" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label for="name">Child's Name</label>
+            <input type="text" class="form-control" id="childname" name="childname" placeholder="Enter Your Child's Name">
+        </div>
+        <div class="form-group">
+            <label for="name">Guardian's Name(Who'll pick the child from spot)</label>
+            <input type="text" class="form-control" id="guardianname" name="guardianname" placeholder="Enter the Guardian's Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Contact Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Contact Number">
+        </div>
+        
+        <div class="form-group">
+          <label for="desc">Mention if the child contain any disability</label>
+          <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock body %}
